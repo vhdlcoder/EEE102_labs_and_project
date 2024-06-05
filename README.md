@@ -4,3 +4,5 @@ I used Arduino UNO for soil moisture sensor and converted analog to digital sign
 To sum up, in this project I measured the conditions of plant and compare them with ideal conditions which is inputted from user.
 
 I hope it helps to your projects.
+
+It says js etc. in the language section, but this project was prepared using only vhdl and a little Arduino.
