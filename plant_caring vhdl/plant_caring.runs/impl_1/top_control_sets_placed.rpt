@@ -1,0 +1,107 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Wed Jun  5 15:36:00 2024
+| Host         : Burak running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a35t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    29 |
+|    Minimum number of control sets                        |    29 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   111 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    29 |
+| >= 0 to < 4        |    11 |
+| >= 4 to < 6        |     3 |
+| >= 6 to < 8        |     3 |
+| >= 8 to < 10       |     4 |
+| >= 10 to < 12      |     0 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |     8 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              80 |           26 |
+| No           | No                    | Yes                    |              20 |            5 |
+| No           | Yes                   | No                     |              38 |           11 |
+| Yes          | No                    | No                     |             108 |           34 |
+| Yes          | No                    | Yes                    |               4 |            4 |
+| Yes          | Yes                   | No                     |              39 |           11 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-----------------------------------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|                           Clock Signal                          |                           Enable Signal                           |                   Set/Reset Signal                  | Slice Load Count | Bel Load Count | Bels / Slice |
++-----------------------------------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG                                                  | dht11_sensor_inst/sensor_generate/rst_0                           | kurulum_IBUF                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                  | dht11_sensor_inst/sensor_generate/rst_1                           | kurulum_IBUF                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                  | dht11_sensor_inst/sensor_generate/rst                             | kurulum_IBUF                                        |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                  | dht11_sensor_inst/sensor_generate/rst_2                           | kurulum_IBUF                                        |                1 |              1 |         1.00 |
+|  trig11_reg_i_4_n_0                                             | hcsr04_inst/trig11_i_2_n_0                                        | hcsr04_inst/trig11_i_1_n_0                          |                1 |              1 |         1.00 |
+|  clock1Mhz                                                      |                                                                   |                                                     |                1 |              1 |         1.00 |
+|  dht11_sensor_inst/decod_for_ssd/ssd_iden/ssd1_reg[0]/G0        |                                                                   |                                                     |                1 |              1 |         1.00 |
+|  dht11_sensor_inst/decod_for_ssd/ssd_iden/ssd1_reg[1]/G0        |                                                                   |                                                     |                1 |              1 |         1.00 |
+|  dht11_sensor_inst/decod_for_ssd/ssd_iden/ssd3_reg[1]/G0        |                                                                   |                                                     |                1 |              1 |         1.00 |
+|  dht11_sensor_inst/decod_for_ssd/ssd_iden/ssd3_reg[0]/G0        |                                                                   |                                                     |                1 |              1 |         1.00 |
+|  clk_IBUF_BUFG                                                  |                                                                   |                                                     |                2 |              2 |         1.00 |
+|  clock1Mhz                                                      | dht11_sensor_inst/sensor_generate/FSM_sequential_State[3]_i_1_n_0 |                                                     |                2 |              4 |         2.00 |
+|  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[18]_0[0] |                                                                   |                                                     |                1 |              4 |         4.00 |
+|  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[38]_0[0] |                                                                   |                                                     |                1 |              4 |         4.00 |
+|  clk_IBUF_BUFG                                                  |                                                                   | dht11_sensor_inst/divided_clock/count[5]_i_1__0_n_0 |                2 |              6 |         3.00 |
+|  clock1Mhz                                                      | dht11_sensor_inst/sensor_generate/length                          | dht11_sensor_inst/sensor_generate/length[5]_i_1_n_0 |                2 |              6 |         3.00 |
+|  trig11_reg_i_4_n_0                                             | hcsr04_inst/echo_time                                             |                                                     |                4 |              7 |         1.75 |
+|  eqOp                                                           |                                                                   |                                                     |                2 |              8 |         4.00 |
+|  temp_threshold_high_reg[7]_i_1_n_0                             |                                                                   |                                                     |                2 |              8 |         4.00 |
+|  temp_threshold_low_reg[7]_i_1_n_0                              |                                                                   |                                                     |                2 |              8 |         4.00 |
+|  air_humid_threshold_high_reg[7]_i_1_n_0                        |                                                                   |                                                     |                2 |              8 |         4.00 |
+|  clock1Mhz                                                      | dht11_sensor_inst/sensor_generate/Fourty_bit_data                 |                                                     |                4 |             16 |         4.00 |
+|  clock1Mhz                                                      | dht11_sensor_inst/sensor_generate/temp_humid_signal_1             |                                                     |                6 |             19 |         3.17 |
+|  clk_IBUF_BUFG                                                  |                                                                   | rst_IBUF                                            |                5 |             20 |         4.00 |
+|  clk_IBUF_BUFG                                                  |                                                                   | hcsr04_inst/cont[31]_i_1_n_0                        |                9 |             32 |         3.56 |
+|  trig11_reg_i_4_n_0                                             | echo1_IBUF                                                        | hcsr04_inst/echo_time                               |                8 |             32 |         4.00 |
+|  clock1Mhz                                                      | dht11_sensor_inst/sensor_generate/count_0                         |                                                     |               10 |             32 |         3.20 |
+|  clock1Mhz                                                      | dht11_sensor_inst/sensor_generate/one_counter[0]_i_1_n_0          |                                                     |                8 |             32 |         4.00 |
+|  trig11_reg_i_4_n_0                                             |                                                                   |                                                     |                9 |             33 |         3.67 |
++-----------------------------------------------------------------+-------------------------------------------------------------------+-----------------------------------------------------+------------------+----------------+--------------+
+
+

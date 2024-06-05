@@ -1,0 +1,1195 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Wed Jun  5 15:36:18 2024
+| Host         : Burak running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -report_unconstrained -file top_timing_summary_routed.rpt -pb top_timing_summary_routed.pb -rpx top_timing_summary_routed.rpx -warn_on_violation
+| Design       : top
+| Device       : 7a35t-cpg236
+| Speed File   : -1  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                       Violations  
+---------  ----------------  --------------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell       247         
+HPDR-1     Warning           Port pin direction inconsistency  4           
+LUTAR-1    Warning           LUT drives async reset alert      6           
+TIMING-20  Warning           Non-clocked latch                 44          
+LATCH-1    Advisory          Existing latches in the design    1           
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (359)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (545)
+5. checking no_input_delay (12)
+6. checking no_output_delay (18)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (359)
+--------------------------
+ There are 64 register/latch pins with no clock driven by root clock pin: clk (HIGH)
+
+ There are 32 register/latch pins with no clock driven by root clock pin: option[0] (HIGH)
+
+ There are 32 register/latch pins with no clock driven by root clock pin: option[1] (HIGH)
+
+ There are 110 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/divided_clock/clk_reg/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[17]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[18]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[19]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[20]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[36]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[37]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[38]/Q (HIGH)
+
+ There are 6 register/latch pins with no clock driven by root clock pin: dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[39]/Q (HIGH)
+
+ There are 73 register/latch pins with no clock driven by root clock pin: hcsr04_inst/clk_out_reg/Q (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (545)
+--------------------------------------------------
+ There are 545 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (12)
+-------------------------------
+ There are 12 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (18)
+--------------------------------
+ There are 18 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                  564          inf        0.000                      0                  564           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay           564 Endpoints
+Min Delay           564 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        27.246ns  (logic 8.463ns (31.061%)  route 18.783ns (68.939%))
+  Logic Levels:           34  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=4 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          0.998    25.377    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I3_O)        0.124    25.501 r  hcsr04_inst/centimeter[2]_i_2/O
+                         net (fo=4, routed)           0.682    26.183    hcsr04_inst/centimeter[2]_i_2_n_0
+    SLICE_X32Y49         LUT6 (Prop_lut6_I2_O)        0.124    26.307 r  hcsr04_inst/centimeter[4]_i_2/O
+                         net (fo=1, routed)           0.815    27.122    hcsr04_inst/centimeter[4]_i_2_n_0
+    SLICE_X32Y48         LUT5 (Prop_lut5_I0_O)        0.124    27.246 r  hcsr04_inst/centimeter[4]_i_1/O
+                         net (fo=1, routed)           0.000    27.246    hcsr04_inst/centimeter[4]_i_1_n_0
+    SLICE_X32Y48         FDRE                                         r  hcsr04_inst/centimeter_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        27.095ns  (logic 8.463ns (31.235%)  route 18.632ns (68.765%))
+  Logic Levels:           34  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=4 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          0.998    25.377    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I3_O)        0.124    25.501 r  hcsr04_inst/centimeter[2]_i_2/O
+                         net (fo=4, routed)           0.525    26.026    hcsr04_inst/centimeter[2]_i_2_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I2_O)        0.124    26.150 r  hcsr04_inst/centimeter[7]_i_4/O
+                         net (fo=2, routed)           0.821    26.971    hcsr04_inst/centimeter[7]_i_4_n_0
+    SLICE_X33Y51         LUT6 (Prop_lut6_I2_O)        0.124    27.095 r  hcsr04_inst/centimeter[7]_i_2/O
+                         net (fo=1, routed)           0.000    27.095    hcsr04_inst/centimeter[7]_i_2_n_0
+    SLICE_X33Y51         FDRE                                         r  hcsr04_inst/centimeter_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        27.093ns  (logic 8.463ns (31.237%)  route 18.630ns (68.763%))
+  Logic Levels:           34  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=5 LUT6=5)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          0.998    25.377    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I3_O)        0.124    25.501 r  hcsr04_inst/centimeter[2]_i_2/O
+                         net (fo=4, routed)           0.525    26.026    hcsr04_inst/centimeter[2]_i_2_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I2_O)        0.124    26.150 r  hcsr04_inst/centimeter[7]_i_4/O
+                         net (fo=2, routed)           0.819    26.969    hcsr04_inst/centimeter[7]_i_4_n_0
+    SLICE_X33Y51         LUT5 (Prop_lut5_I0_O)        0.124    27.093 r  hcsr04_inst/centimeter[6]_i_1/O
+                         net (fo=1, routed)           0.000    27.093    hcsr04_inst/centimeter[6]_i_1_n_0
+    SLICE_X33Y51         FDRE                                         r  hcsr04_inst/centimeter_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        26.474ns  (logic 8.339ns (31.499%)  route 18.135ns (68.501%))
+  Logic Levels:           33  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=4 LUT6=5)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          0.998    25.377    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I3_O)        0.124    25.501 r  hcsr04_inst/centimeter[2]_i_2/O
+                         net (fo=4, routed)           0.849    26.350    hcsr04_inst/centimeter[2]_i_2_n_0
+    SLICE_X32Y48         LUT5 (Prop_lut5_I0_O)        0.124    26.474 r  hcsr04_inst/centimeter[2]_i_1/O
+                         net (fo=1, routed)           0.000    26.474    hcsr04_inst/centimeter[2]_i_1_n_0
+    SLICE_X32Y48         FDRE                                         r  hcsr04_inst/centimeter_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        26.357ns  (logic 8.463ns (32.109%)  route 17.894ns (67.891%))
+  Logic Levels:           34  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=4 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          0.998    25.377    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I3_O)        0.124    25.501 r  hcsr04_inst/centimeter[2]_i_2/O
+                         net (fo=4, routed)           0.175    25.676    hcsr04_inst/centimeter[2]_i_2_n_0
+    SLICE_X33Y49         LUT6 (Prop_lut6_I1_O)        0.124    25.800 r  hcsr04_inst/centimeter[5]_i_2/O
+                         net (fo=1, routed)           0.433    26.233    hcsr04_inst/centimeter[5]_i_2_n_0
+    SLICE_X33Y49         LUT5 (Prop_lut5_I0_O)        0.124    26.357 r  hcsr04_inst/centimeter[5]_i_1/O
+                         net (fo=1, routed)           0.000    26.357    hcsr04_inst/centimeter[5]_i_1_n_0
+    SLICE_X33Y49         FDRE                                         r  hcsr04_inst/centimeter_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        26.020ns  (logic 8.339ns (32.049%)  route 17.681ns (67.951%))
+  Logic Levels:           33  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=3 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          1.231    25.610    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X32Y49         LUT6 (Prop_lut6_I1_O)        0.124    25.734 r  hcsr04_inst/centimeter[3]_i_2/O
+                         net (fo=1, routed)           0.162    25.896    hcsr04_inst/centimeter[3]_i_2_n_0
+    SLICE_X32Y49         LUT5 (Prop_lut5_I0_O)        0.124    26.020 r  hcsr04_inst/centimeter[3]_i_1/O
+                         net (fo=1, routed)           0.000    26.020    hcsr04_inst/centimeter[3]_i_1_n_0
+    SLICE_X32Y49         FDRE                                         r  hcsr04_inst/centimeter_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 hcsr04_inst/echo_time_reg[0]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            hcsr04_inst/centimeter_reg[1]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        25.919ns  (logic 8.215ns (31.695%)  route 17.704ns (68.305%))
+  Logic Levels:           32  (CARRY4=18 FDRE=1 LUT1=1 LUT3=3 LUT4=1 LUT5=2 LUT6=6)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X52Y44         FDRE                         0.000     0.000 r  hcsr04_inst/echo_time_reg[0]/C
+    SLICE_X52Y44         FDRE (Prop_fdre_C_Q)         0.518     0.518 f  hcsr04_inst/echo_time_reg[0]/Q
+                         net (fo=30, routed)          1.367     1.885    hcsr04_inst/echo_time_reg[0]
+    SLICE_X49Y42         LUT1 (Prop_lut1_I0_O)        0.124     2.009 r  hcsr04_inst/centimeter1__0_carry_i_8/O
+                         net (fo=1, routed)           0.385     2.394    hcsr04_inst/centimeter1__0_carry_i_8_n_0
+    SLICE_X48Y43         CARRY4 (Prop_carry4_CYINIT_CO[3])
+                                                      0.580     2.974 r  hcsr04_inst/centimeter1__0_carry_i_7/CO[3]
+                         net (fo=1, routed)           0.000     2.974    hcsr04_inst/centimeter1__0_carry_i_7_n_0
+    SLICE_X48Y44         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114     3.088 r  hcsr04_inst/centimeter1__0_carry__1_i_9/CO[3]
+                         net (fo=1, routed)           0.000     3.088    hcsr04_inst/centimeter1__0_carry__1_i_9_n_0
+    SLICE_X48Y45         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334     3.422 r  hcsr04_inst/centimeter1__0_carry__1_i_10/O[1]
+                         net (fo=17, routed)          1.943     5.364    hcsr04_inst/centimeter3[10]
+    SLICE_X53Y52         LUT3 (Prop_lut3_I1_O)        0.303     5.667 r  hcsr04_inst/centimeter1__0_carry__2_i_9/O
+                         net (fo=9, routed)           1.808     7.475    hcsr04_inst/centimeter1__0_carry__2_i_9_n_0
+    SLICE_X53Y45         LUT6 (Prop_lut6_I3_O)        0.124     7.599 r  hcsr04_inst/centimeter1__0_carry__2_i_1/O
+                         net (fo=2, routed)           0.811     8.410    hcsr04_inst/centimeter1__0_carry__2_i_1_n_0
+    SLICE_X50Y45         LUT6 (Prop_lut6_I1_O)        0.124     8.534 r  hcsr04_inst/centimeter1__0_carry__2_i_5/O
+                         net (fo=1, routed)           0.000     8.534    hcsr04_inst/centimeter1__0_carry__2_i_5_n_0
+    SLICE_X50Y45         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.376     8.910 r  hcsr04_inst/centimeter1__0_carry__2/CO[3]
+                         net (fo=1, routed)           0.000     8.910    hcsr04_inst/centimeter1__0_carry__2_n_0
+    SLICE_X50Y46         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.027 r  hcsr04_inst/centimeter1__0_carry__3/CO[3]
+                         net (fo=1, routed)           0.000     9.027    hcsr04_inst/centimeter1__0_carry__3_n_0
+    SLICE_X50Y47         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.144 r  hcsr04_inst/centimeter1__0_carry__4/CO[3]
+                         net (fo=1, routed)           0.000     9.144    hcsr04_inst/centimeter1__0_carry__4_n_0
+    SLICE_X50Y48         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.261 r  hcsr04_inst/centimeter1__0_carry__5/CO[3]
+                         net (fo=1, routed)           0.000     9.261    hcsr04_inst/centimeter1__0_carry__5_n_0
+    SLICE_X50Y49         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.378 r  hcsr04_inst/centimeter1__0_carry__6/CO[3]
+                         net (fo=1, routed)           0.001     9.379    hcsr04_inst/centimeter1__0_carry__6_n_0
+    SLICE_X50Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.117     9.496 f  hcsr04_inst/centimeter1__0_carry__7/CO[3]
+                         net (fo=38, routed)          1.246    10.742    hcsr04_inst/centimeter1__0_carry__7_n_0
+    SLICE_X53Y51         LUT6 (Prop_lut6_I1_O)        0.124    10.866 r  hcsr04_inst/centimeter1__365_carry__3_i_1/O
+                         net (fo=2, routed)           1.329    12.195    hcsr04_inst/centimeter1__365_carry__3_i_1_n_0
+    SLICE_X51Y49         LUT6 (Prop_lut6_I1_O)        0.124    12.319 r  hcsr04_inst/centimeter1__365_carry__3_i_5/O
+                         net (fo=1, routed)           0.000    12.319    hcsr04_inst/centimeter1__365_carry__3_i_5_n_0
+    SLICE_X51Y49         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.401    12.720 r  hcsr04_inst/centimeter1__365_carry__3/CO[3]
+                         net (fo=1, routed)           0.001    12.721    hcsr04_inst/centimeter1__365_carry__3_n_0
+    SLICE_X51Y50         CARRY4 (Prop_carry4_CI_CO[3])
+                                                      0.114    12.835 r  hcsr04_inst/centimeter1__365_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    12.835    hcsr04_inst/centimeter1__365_carry__4_n_0
+    SLICE_X51Y51         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.222    13.057 r  hcsr04_inst/centimeter1__365_carry__5/O[0]
+                         net (fo=3, routed)           1.340    14.397    hcsr04_inst/centimeter1__365_carry__5_n_7
+    SLICE_X43Y51         LUT3 (Prop_lut3_I1_O)        0.299    14.696 r  hcsr04_inst/centimeter1__473_carry__7_i_12/O
+                         net (fo=2, routed)           0.825    15.521    hcsr04_inst/centimeter1__473_carry__7_i_12_n_0
+    SLICE_X41Y50         LUT5 (Prop_lut5_I1_O)        0.124    15.645 r  hcsr04_inst/centimeter1__473_carry__8_i_4/O
+                         net (fo=2, routed)           0.958    16.603    hcsr04_inst/centimeter1__473_carry__8_i_4_n_0
+    SLICE_X44Y51         LUT6 (Prop_lut6_I0_O)        0.124    16.727 r  hcsr04_inst/centimeter1__473_carry__8_i_8/O
+                         net (fo=1, routed)           0.000    16.727    hcsr04_inst/centimeter1__473_carry__8_i_8_n_0
+    SLICE_X44Y51         CARRY4 (Prop_carry4_S[0]_CO[3])
+                                                      0.532    17.259 r  hcsr04_inst/centimeter1__473_carry__8/CO[3]
+                         net (fo=1, routed)           0.000    17.259    hcsr04_inst/centimeter1__473_carry__8_n_0
+    SLICE_X44Y52         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.334    17.593 f  hcsr04_inst/centimeter1__473_carry__9/O[1]
+                         net (fo=9, routed)           1.162    18.756    hcsr04_inst/centimeter1__473_carry__9_n_6
+    SLICE_X41Y53         LUT3 (Prop_lut3_I0_O)        0.303    19.059 r  hcsr04_inst/centimeter1__594_carry__4_i_4/O
+                         net (fo=1, routed)           0.513    19.572    hcsr04_inst/centimeter1__594_carry__4_i_4_n_0
+    SLICE_X42Y53         CARRY4 (Prop_carry4_DI[0]_CO[3])
+                                                      0.550    20.122 r  hcsr04_inst/centimeter1__594_carry__4/CO[3]
+                         net (fo=1, routed)           0.000    20.122    hcsr04_inst/centimeter1__594_carry__4_n_0
+    SLICE_X42Y54         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.323    20.445 r  hcsr04_inst/centimeter1__594_carry__5/O[1]
+                         net (fo=3, routed)           0.750    21.195    hcsr04_inst/centimeter1__594_carry__5_n_6
+    SLICE_X46Y55         LUT4 (Prop_lut4_I0_O)        0.306    21.501 r  hcsr04_inst/centimeter1__675_carry__5_i_1/O
+                         net (fo=1, routed)           0.657    22.158    hcsr04_inst/centimeter1__675_carry__5_i_1_n_0
+    SLICE_X47Y53         CARRY4 (Prop_carry4_DI[3]_CO[3])
+                                                      0.385    22.543 r  hcsr04_inst/centimeter1__675_carry__5/CO[3]
+                         net (fo=1, routed)           0.000    22.543    hcsr04_inst/centimeter1__675_carry__5_n_0
+    SLICE_X47Y54         CARRY4 (Prop_carry4_CI_CO[0])
+                                                      0.271    22.814 r  hcsr04_inst/centimeter1__675_carry__6/CO[0]
+                         net (fo=6, routed)           1.192    24.006    hcsr04_inst/centimeter1__675_carry__6_n_3
+    SLICE_X40Y50         LUT5 (Prop_lut5_I0_O)        0.373    24.379 r  hcsr04_inst/centimeter[7]_i_5/O
+                         net (fo=11, routed)          1.416    25.795    hcsr04_inst/centimeter[7]_i_5_n_0
+    SLICE_X32Y49         LUT6 (Prop_lut6_I4_O)        0.124    25.919 r  hcsr04_inst/centimeter[1]_i_1/O
+                         net (fo=1, routed)           0.000    25.919    hcsr04_inst/centimeter[1]_i_1_n_0
+    SLICE_X32Y49         FDRE                                         r  hcsr04_inst/centimeter_reg[1]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 rst
+                            (input port)
+  Destination:            wind_warning
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        11.918ns  (logic 5.070ns (42.543%)  route 6.848ns (57.457%))
+  Logic Levels:           3  (IBUF=1 LUT5=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    U18                                               0.000     0.000 f  rst (IN)
+                         net (fo=0)                   0.000     0.000    rst
+    U18                  IBUF (Prop_ibuf_I_O)         1.441     1.441 f  rst_IBUF_inst/O
+                         net (fo=25, routed)          2.950     4.391    hcsr04_inst/rst_IBUF
+    SLICE_X32Y48         LUT5 (Prop_lut5_I1_O)        0.124     4.515 r  hcsr04_inst/wind_warning_OBUF_inst_i_1/O
+                         net (fo=1, routed)           3.898     8.413    wind_warning_OBUF
+    U16                  OBUF (Prop_obuf_I_O)         3.505    11.918 r  wind_warning_OBUF_inst/O
+                         net (fo=0)                   0.000    11.918    wind_warning
+    U16                                                               r  wind_warning (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 soil_humid
+                            (input port)
+  Destination:            soil_warning
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.795ns  (logic 4.969ns (46.027%)  route 5.827ns (53.973%))
+  Logic Levels:           2  (IBUF=1 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    N2                                                0.000     0.000 r  soil_humid (IN)
+                         net (fo=0)                   0.000     0.000    soil_humid
+    N2                   IBUF (Prop_ibuf_I_O)         1.454     1.454 r  soil_humid_IBUF_inst/O
+                         net (fo=1, routed)           5.827     7.281    soil_warning_OBUF
+    U15                  OBUF (Prop_obuf_I_O)         3.514    10.795 r  soil_warning_OBUF_inst/O
+                         net (fo=0)                   0.000    10.795    soil_warning
+    U15                                                               r  soil_warning (OUT)
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/timer_count/refresh_counter_reg[19]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            LED_on[4]
+                            (output port)
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.943ns  (logic 4.475ns (45.006%)  route 5.468ns (54.994%))
+  Logic Levels:           4  (FDCE=1 LUT4=2 OBUF=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X31Y20         FDCE                         0.000     0.000 r  dht11_sensor_inst/timer_count/refresh_counter_reg[19]/C
+    SLICE_X31Y20         FDCE (Prop_fdce_C_Q)         0.456     0.456 r  dht11_sensor_inst/timer_count/refresh_counter_reg[19]/Q
+                         net (fo=9, routed)           1.736     2.192    dht11_sensor_inst/decod_for_ssd/ssd_iden/Enable[1]
+    SLICE_X31Y15         LUT4 (Prop_lut4_I1_O)        0.124     2.316 f  dht11_sensor_inst/decod_for_ssd/ssd_iden/LED_on_OBUF[6]_inst_i_3/O
+                         net (fo=7, routed)           1.874     4.191    dht11_sensor_inst/decod_for_ssd/ssd_iden/Led[2]
+    SLICE_X65Y17         LUT4 (Prop_lut4_I1_O)        0.152     4.343 r  dht11_sensor_inst/decod_for_ssd/ssd_iden/LED_on_OBUF[4]_inst_i_1/O
+                         net (fo=1, routed)           1.857     6.200    LED_on_OBUF[4]
+    U8                   OBUF (Prop_obuf_I_O)         3.743     9.943 r  LED_on_OBUF[4]_inst/O
+                         net (fo=0)                   0.000     9.943    LED_on[4]
+    U8                                                                r  LED_on[4] (OUT)
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[23]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[23]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.247ns  (logic 0.141ns (57.108%)  route 0.106ns (42.892%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[23]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[23]/Q
+                         net (fo=2, routed)           0.106     0.247    dht11_sensor_inst/sensor_generate/temp_humid_signal[23]
+    SLICE_X31Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[23]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[22]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[22]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.250ns  (logic 0.141ns (56.356%)  route 0.109ns (43.644%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[22]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[22]/Q
+                         net (fo=2, routed)           0.109     0.250    dht11_sensor_inst/sensor_generate/temp_humid_signal[22]
+    SLICE_X31Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[22]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[35]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[35]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.251ns  (logic 0.128ns (51.082%)  route 0.123ns (48.918%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[35]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[35]/Q
+                         net (fo=2, routed)           0.123     0.251    dht11_sensor_inst/sensor_generate/temp_humid_signal[35]
+    SLICE_X31Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[35]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[37]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.254ns  (logic 0.128ns (50.352%)  route 0.126ns (49.648%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/Q
+                         net (fo=2, routed)           0.126     0.254    dht11_sensor_inst/sensor_generate/temp_humid_signal[36]
+    SLICE_X32Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[37]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[35]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.268ns  (logic 0.128ns (47.765%)  route 0.140ns (52.235%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[35]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[35]/Q
+                         net (fo=2, routed)           0.140     0.268    dht11_sensor_inst/sensor_generate/temp_humid_signal[35]
+    SLICE_X32Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[33]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[34]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.274ns  (logic 0.141ns (51.481%)  route 0.133ns (48.519%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[33]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.141     0.141 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[33]/Q
+                         net (fo=2, routed)           0.133     0.274    dht11_sensor_inst/sensor_generate/temp_humid_signal[33]
+    SLICE_X32Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[34]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[38]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[38]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.276ns  (logic 0.148ns (53.532%)  route 0.128ns (46.468%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X30Y16         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[38]/C
+    SLICE_X30Y16         FDRE (Prop_fdre_C_Q)         0.148     0.148 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[38]/Q
+                         net (fo=2, routed)           0.128     0.276    dht11_sensor_inst/sensor_generate/temp_humid_signal[38]
+    SLICE_X29Y15         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[38]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[34]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[34]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.295ns  (logic 0.128ns (43.442%)  route 0.167ns (56.558%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[34]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[34]/Q
+                         net (fo=2, routed)           0.167     0.295    dht11_sensor_inst/sensor_generate/temp_humid_signal[34]
+    SLICE_X31Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[34]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[36]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.295ns  (logic 0.128ns (43.369%)  route 0.167ns (56.631%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[36]/Q
+                         net (fo=2, routed)           0.167     0.295    dht11_sensor_inst/sensor_generate/temp_humid_signal[36]
+    SLICE_X31Y13         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[36]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[37]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[37]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.301ns  (logic 0.128ns (42.564%)  route 0.173ns (57.436%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X32Y13         FDRE                         0.000     0.000 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[37]/C
+    SLICE_X32Y13         FDRE (Prop_fdre_C_Q)         0.128     0.128 r  dht11_sensor_inst/sensor_generate/temp_humid_signal_reg[37]/Q
+                         net (fo=2, routed)           0.173     0.301    dht11_sensor_inst/sensor_generate/temp_humid_signal[37]
+    SLICE_X31Y14         FDRE                                         r  dht11_sensor_inst/sensor_generate/Fourty_bit_data_reg[37]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
